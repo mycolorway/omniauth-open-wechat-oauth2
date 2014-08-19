@@ -1,0 +1,46 @@
+*.gem
+*.rbc
+.bundle
+.config
+.yardoc
+Gemfile.lock
+InstalledFiles
+_yardoc
+coverage
+doc/
+lib/bundler/man
+pkg
+rdoc
+spec/reports
+test/tmp
+test/version_tmp
+tmp
+*.bundle
+*.so
+*.o
+*.a
+mkmf.log
+
+# ===
+# vim
+# ===
+# https://github.com/github/gitignore/blob/master/Global/vim.gitignore
+.*.sw[a-z]
+*.un~
+Session.vim
+.netrwhist
+
+# ========
+# textmate
+# ========
+# https://github.com/github/gitignore/blob/master/Global/TextMate.gitignore
+*.tmproj
+*.tmproject
+tmtags
+
+# =======
+# sublime
+# =======
+# https://github.com/github/gitignore/blob/master/Global/SublimeText.gitignore
+# SublimeText project files
+*.sublime-workspace
