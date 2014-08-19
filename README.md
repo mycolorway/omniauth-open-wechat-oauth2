@@ -1,6 +1,9 @@
-# Omniauth::Open::Wechat::Oauth2
+# omniauth-open-wechat-oauth2
 
-TODO: Write a gem description
+Using OAuth2 to authenticate wechat user in web application.
+Base on [https://github.com/skinnyworm/omniauth-wechat-oauth2](https://github.com/skinnyworm/omniauth-wechat-oauth2)
+
+Open Wechat Document: [https://open.weixin.qq.com/cgi-bin/frame?t=resource/res_main_tmpl&verify=1&lang=zh_CN](https://open.weixin.qq.com/cgi-bin/frame?t=resource/res_main_tmpl&verify=1&lang=zh_CN)
 
 ## Installation
 
@@ -18,7 +21,53 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Add provider to `config/initializers/omniauth.rb`
+
+```ruby
+Rails.application.config.middleware.use OmniAuth::Builder do
+  provider :open_wechat, 'open_wechat_app_id', 'open_wechat_app_secret'
+end
+```
+
+Access the OmniAuth Open Wechat OAuth2 URL: /auth/open_wechat
+
+## Auth Hash
+
+A example of `request.env["omniauth.auth"]` :
+
+```ruby
+{
+    :provider => "open_wechat",
+    :uid => "123456789",
+    :info => {
+          nickname:   "Nickname",
+          sex:        1,
+          province:   "Changning",
+          city:       "Shanghai",
+          country:    "China",
+          headimgurl: "http://image_url",
+          unionid:    "xxxxxxxxx"
+        },
+    :credentials => {
+            :token => "token",
+            :refresh_token => "another_token",
+            :expires_at => 7200,
+            :expires => true
+        },
+    :extra => {
+            :raw_info => {
+                      openid:     "openid"
+                      nickname:   "Nickname",
+                      sex:        1,
+                      province:   "Changning",
+                      city:       "Shanghai",
+                      country:    "China",
+                      headimgurl: "http://image_url",
+                      unionid:    "xxxxxxxxx"
+                    }
+        }
+}
+```
 
 ## Contributing
 
