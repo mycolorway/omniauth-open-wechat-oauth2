@@ -101,7 +101,6 @@ describe OmniAuth::Strategies::OpenWechat do
       })}
 
       specify "only have openid" do
-        expect(subject.uid).to eq("openid")
         expect(subject.raw_info).to eq("openid" => "openid")
       end
     end

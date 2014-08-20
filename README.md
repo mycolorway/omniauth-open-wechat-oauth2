@@ -38,15 +38,15 @@ A example of `request.env["omniauth.auth"]` :
 ```ruby
 {
     :provider => "open_wechat",
-    :uid => "123456789",
+    :uid => "unionid",
     :info => {
+          openid:     "openid",
           nickname:   "Nickname",
           sex:        1,
           province:   "Changning",
           city:       "Shanghai",
           country:    "China",
-          headimgurl: "http://image_url",
-          unionid:    "xxxxxxxxx"
+          headimgurl: "http://image_url"
         },
     :credentials => {
             :token => "token",

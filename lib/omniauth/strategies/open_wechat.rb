@@ -17,18 +17,18 @@ module OmniAuth
       option :token_params, {parse: :json}
 
       uid do
-        raw_info['openid']
+        raw_info['unionid']
       end
 
       info do
         {
+          openid:     raw_info["openid"],
           nickname:   raw_info['nickname'],
           sex:        raw_info['sex'],
           province:   raw_info['province'],
           city:       raw_info['city'],
           country:    raw_info['country'],
-          headimgurl: raw_info['headimgurl'],
-          unionid:    raw_info['unionid']
+          headimgurl: raw_info['headimgurl']
         }
       end
 
