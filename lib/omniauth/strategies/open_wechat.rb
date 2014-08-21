@@ -46,7 +46,7 @@ module OmniAuth
         @uid ||= access_token["openid"]
         @raw_info ||= begin
           access_token.options[:mode] = :query
-          if access_token["scope"] == "snsapi_userinfo"
+          if access_token["scope"] && access_token["scope"].include?("snsapi_userinfo")
             @raw_info = access_token.get("/sns/userinfo", :params => {"openid" => @uid}, parse: :json).parsed
           else
             @raw_info = {"openid" => @uid }
